@@ -7,11 +7,4 @@ Author: John Pritchard
 Author-Link: https://twitter.com/syntelos
 Author-Link: https://github.com/syntelos
 Content-Type: text/plain; charset=UTF-8
-Content-Length: 98
-
-Syntelos docs
-
-A photo walk through reflections on work in progress.
-
-On linux, run './eog.sh'.
-
+Content-Length:
