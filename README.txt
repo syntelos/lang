@@ -7,11 +7,20 @@ Author: John Pritchard
 Author-Link: https://twitter.com/syntelos
 Author-Link: https://github.com/syntelos
 Content-Type: text/plain; charset=UTF-8
-Content-Length: 98
+Content-Length: 156
 
 Syntelos docs
 
 A photo walk through reflections on work in progress.
 
-On linux, run './eog.sh'.
+
+On linux, run
+
+  ./eog.sh
+
+for a page walk, and
+
+  ./ani.sh
+
+for an animated walk.
 
