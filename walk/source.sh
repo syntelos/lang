@@ -41,7 +41,7 @@ EOF
         do 
             srcf=$(echo $srcf | sed 's/%%%/ /g')
 
-            tgtn=tweetdeck-$(echo $srcf | sed 's%.*Screenshot from %%; s%-%%g; s% %-%g;')
+            tgtn=walk-$(echo $srcf | sed 's%.*Screenshot from %%; s%-%%g; s% %-%g;')
 
             tgtf=${dir_tgt}/${tgtn}
 
