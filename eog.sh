@@ -1,4 +1,4 @@
 #!/bin/bash
 
-eog $(find walk -type f -name '*.png')
+eog $(find docs/walk -type f -name '*.png')
 
