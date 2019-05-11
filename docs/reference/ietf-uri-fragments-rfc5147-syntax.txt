@@ -1,0 +1,26 @@
+
+   464  3.  Fragment Identification Syntax
+   465  
+   466     The syntax for the text/plain fragment identifiers is
+   467     straightforward.  The syntax defines four schemes, 'char', 'line',
+   468     and integrity check (which can either be 'length' or 'md5').  The
+   469     'char' and 'line' schemes can be used in two different variants,
+   470     either the position variant (with a single number), or the range
+   471     variant (with two comma-separated numbers).  An integrity check can
+   472     either use the 'length' or the 'md5' scheme to specify a value.
+   473     'length' in this case serves as a very weak but easy to calculate
+   474     integrity check.
+
+   485     text-fragment   =  text-scheme 0*( ";" integrity-check )
+   486     text-scheme     =  ( char-scheme / line-scheme )
+   487     char-scheme     =  "char=" ( position / range )
+   488     line-scheme     =  "line=" ( position / range )
+   489     integrity-check =  ( length-scheme / md5-scheme )
+   490                          [ "," mime-charset ]
+   491     position        =  number
+   492     range           =  ( position "," [ position ] ) / ( "," position )
+   493     number          =  1*( DIGIT )
+   494     length-scheme   =  "length=" number
+   495     md5-scheme      =  "md5=" md5-value
+   496     md5-value       =  32HEXDIG
+
