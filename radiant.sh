@@ -29,6 +29,7 @@ Operations
   touch tgt src
   split tgt-head tgt-body src
   update src
+  check src
 
 EOF
 }
@@ -153,6 +154,27 @@ function do_update {
 
                 if cat /tmp/head | sed "s%^Last-Modified: .*%Last-Modified: ${date}%; s%^Content-Length: .*%Content-Length: ${size}%; s%^Content-MD5: .*%Content-MD5: ${hash}%;" > "${1}" && cat /tmp/body >> "${1}"
                 then
+                    touch -d "${date}" "${1}"
+
+                    return 0
+                fi
+            fi
+        fi
+    fi
+    return 1
+}
+function do_check {
+    # split
+    if copy_head "${1}" > /tmp/head
+    then
+        if copy_body "${1}" > /tmp/body
+        then
+            #diff
+            if date=$(date -r "${1}") && size=$(file_size /tmp/body) && hash=$(file_hash /tmp/body)
+            then
+
+                if cat /tmp/head | sed "s%^Last-Modified: .*%Last-Modified: ${date}%; s%^Content-Length: .*%Content-Length: ${size}%; s%^Content-MD5: .*%Content-MD5: ${hash}%;" > /tmp/check && cat /tmp/body >> /tmp/check && [ -z "$(diff /tmp/check "${1}" )" ]
+                then
                     return 0
                 fi
             fi
@@ -218,6 +240,14 @@ then
             ;;
         update)
             if do_update "${src}"
+            then
+                exit 0
+            else
+                exit 1
+            fi
+            ;;
+        check)
+            if do_check "${src}"
             then
                 exit 0
             else
