@@ -1,0 +1,250 @@
+		On the Size and Computability of the World
+
+			    Dina Q Goldin
+
+			For the dept newsletter
+			  Math/CS dept, UMB
+
+			      July 1999
+
+1.  Introduction
+
+The assumption that "the world is computable" plays a central role
+in the traditional "algorithmic" view of computation: 
+
+  all information needed to solve a computational problem must be
+  provided to the computing agent as a part of the input,
+  prior to the start of the computation.  
+
+This applies to all problems, those that involve pure mathematical 
+calculations, as well as those that try to chart a path of a robot 
+in physical space.  No matter what the "world" of a problem is, 
+traditional computability theory stipulates that all relevant 
+aspects of this world that may be needed to compute the output
+are a part of the problem's input.  
+
+To be more precise, the underlying assumption is that for the
+"world" of any computable problem, a computing agent can be given
+enough information a priori to compute this world.  This information 
+may either be included explicitly in the input, or may be computed 
+during the computation process from what is supplied beforehand.
+
+There are two different ways to interpret the computability assumption, 
+represented by the following statements:
+
+  1) For all problems, even ones involving the real world, the 
+     world is computable provided enough information.
+
+  2) If the world of a problem is not computable, then the problem
+     is not computable either.
+
+On the other hand, the rejection of the computability assumption 
+results in the following statement:
+
+  3) The assumption of a computable world is not necessary for a 
+     computable problem.
+
+In section 2, we will address the first of these statements; in
+section 3, the second one.  In section 4, we turn to the remaining
+statement.   This last statement leads to a different, "non-algorithmic"
+view of computing; we call it "interactive computing".
+
+
+2. Computational worlds
+
+If we could provide all computational agents, prior to the start of
+their computation,  with all the information that they will need,
+then the traditional framework of algorithmic computing would be 
+sufficient to model all computation.
+
+For example, let us consider what would be needed to compute the
+following "problem" algorithmically:
+
+  Task: compute the signals that will be fed to a robot car so
+        it can drive us unassisted from our work back to our home  
+
+Since the friction of the wheels affects the car's breaking, the
+wetness of the pavement needs to be computed for the entire road.
+Since the blowing of the wind affects the car's steering, that needs 
+to be computed as well.  Whether this computation is performed by the 
+agent that computes this task (call it Hal), or by someone else who 
+gives this data to Hal as input -- either way, predicting the weather 
+is a necessary part of solving this problem in an algorithmic setting.
+Being able to predict the weather is a part of what we call "computing 
+the world".  
+
+The question of whether the world is computable, like in the problem 
+above, deals with the fundamental nature of the physical universe:  
+
+  can we ever predict the motion of all physical particles ahead of 
+  time, or will there always be an element of nondeterminism involved?  
+
+Einstein believed that "God does not play dice with the universe", 
+but modern physics tends to disagree with him, making nondeterminism
+an essentiall part of quantum theory.
+
+This question has metaphysical aspects as well.  Not only are humans 
+a part of this world, but a computational device is more likely to 
+come into contact with us than with many other phenomena of the world.
+When humans are a part of the world in question, the computability 
+assumption is reinterpreted as follows:
+
+  there is some program that can predict, for each one of us,
+  what we will be doing at any time
+
+After all, we would certainly object if Hal's output caused the car
+to run over people (remember, it drives unassisted)!
+
+Phrased this way, the question of computability is the same as the 
+question of predestination that so obsessed people in the middle ages.
+For if there is some program that can predict what we will be doing, 
+then our lives follow a predetermined course, a destiny; when taken 
+to its logical extreme, this belief can lead people to abandon all 
+efforts at betterment of their lives.
+
+An algorithmic solution to the above problem requires the real 
+world to be computable.  But the physical and metaphysical issues 
+involved make it clear that the question "Is the real world computable?" 
+is not for Computer Scientists to answer.  As a result, we are forced 
+to reject the first statement in section 1, leaving us with the 
+second one.
+
+3. The worlds of computer science and of mathematics
+
+As section 2 concludes, the traditional "algorithmic" view of
+computation must adopt the second interpretation of the computability
+assumption in section 1: 
+
+  if the world of a problem is not computable, 
+  then the problem is not computable either.  
+
+That is, our notion of computable problems is restricted to the 
+ones whose world can be supplied statically prior to the start 
+of the computation.  This means that task 1 in section 2 cannot be 
+considered a computable problem.
+
+This restriction is not original to computer science.  In fact, it
+is inherited by us from mathematics, the mother discipline of many
+founders of CS.  For mathematicians, the world consists of numbers,
+relations, sets, and their properties;  any mathematical problem,
+if it is solvable at all, will be over this abstract and circumscribed
+world.  The world of mathematicians is by definition computable.
+
+One of the CS founders is Turing, whose abstract machine is 
+considered a model of all computing.   When developing this model,
+it was perfectly natural to adopt the computability restriction 
+from his original discipline, since the motivation for creating the 
+Turing machine was to compute functions from naturals to naturals [Tu].  
+Indeed, all early practical applications of computers were just mechanized 
+versions of mathematical calculations, with transistors and switches 
+instead of pen and paper.   
+
+Computing and calculating started out being one and the same.  
+One could ask a Turing machine a thousand times to add 10 and 10,
+and the answer would always be the same, as it should for a 
+mathematical function.  This machine would never bark back
+"How many times do I have to tell you it's 20, you idiot!"
+Well, it could, but only if the information about the number 
+of times the question was asked was explicitly included with 
+the input; the machine could not remember this on its own, 
+because every computation has to start in the same initial state 
+with all memory blanked out.
+
+But today's programs are not just recipies for tranforming a single
+finite input to a single finite output. 
+With the advent of graphical interfaces, today's programs enable us 
+to create pictures, play war games, and control the new generation 
+of robotical Lego creatures.  User-friendly programs of today
+would not call you an idiot, but they would try to guess what
+directory should be used as default, based on your previous inputs.
+And they would probably finish your question for you, if they see
+you asking the same one a thousand times!
+
+More and more, our programs simulate the behavior of physical objects 
+and beings, real or virtual, that inhabit a 
+world whose complexity is gradually approaching our own.
+Though a car that drives itself is not around yet, there are prototypes
+being developed in California that are perfectly capable of 
+adjusting the breaks and the steering in response to obstacles in
+the road, such as pedestrians.  In today's computing world,
+restricting our notion of problems to ones that exist in a static
+predetermined world, where the position of all pedestrians must
+be precomputed from a priori information, no longer makes sense.
+
+
+4. On altering fundamental assumptions
+
+The question of the world's computability is not the only one where
+Computer Science has borrowed from its mother, mathematics.  
+We have also adopted the mathematical answer to the question: 
+
+  Is the world finite?
+
+Unlike the computability question, mathematics answers this one in 
+the negative:  the set of numbers is infinite, there is no largest one.  
+The infinite size of the world has been very important to Computer 
+Science, where the Turing machine is defined to have an infinite 
+read/write tape.
+
+For both of these questions, on the finiteness and on the computability
+of the world, the answer affects the capability of the resulting 
+computational models;  the term "expressiveness" is used to 
+formalize this notion. In both cases, a positive answer results in
+models that are more "restricted" and less expressive than with a 
+negative answer.  For example, setting a bound on the length
+of the tape, and thus on the size of the inputs, would restrict the
+Turing Machine so its expressiveness is reduced to that of finite
+look-up tables.  
+
+Similarly, we could alter the Turing machine by lifting the restriction 
+of a computable world that is specified a priori:  we could allow it to
+accept inputs and outputs in the middle of a computation.  As a result, 
+we would create Interaction machines [BCJ], which interact with the world 
+during the computation.  The "brain" of a robot car would be one example 
+of such a machine, continually receiving images from a videocamera, and 
+adjusting the car's break and the steering wheel accordingly.
+
+Interaction machines provide a model of computation that actually
+models the kind of computation that computing devices perform nowadays.
+Though the lower expressiveness of finite lookup tables is universally
+accepted, the greater expressivenss of interaction machines is not.
+The engineers and the semanticists may almost take such a result for
+granted, but many have an emotional stake in the algorithmic view of 
+computation and cannot accept such a departure from their fundamental 
+assumptions.
+
+Despite formal definitions of interaction machines and proofs about
+them, such as [Go99], there will always be diehard skeptics who will 
+insist that Turing machines can handle all problems, and if they cannot 
+handle a problem like driving from home to work, then it should not be 
+called a problem.  Such reasoning may "prove" that nothing 
+is more expressive than Turing machine, but only at the cost of 
+ignoring those problems that software engineers and AI researchers 
+deal with everyday.  Their models of computation are interactive [WG, RN], 
+and the theory community cannot continue ignoring them forever.
+  
+
+5. Acknowledgements
+
+I would like to thank Furio Honsell for making me aware of the importance
+of the "is the world computable" question in the conext of interactive
+expressiveness.  I would also like to thank Peter Fejer for giving me
+good insights into the weaknesses of my ealier arguments.
+
+
+6. Bibliography
+
+[Tu] A. Turing.  On Computable Numbers with an Application to the
+Entscheidungsproblem, Proc. London Mach. Society, 2:42, pp. 230-265, 1936.
+
+[RN] S. Russell, P. Norveig. Artificial Intelligence: A Modern Approach.
+Addison-Wesley, 1994. 
+
+[GW] D. Goldin, P. Wegner.  "Behavior and Expressiveness of Persistent 
+Turing Machines", submitted to a conference, June 1999.
+
+[We] P. Wegner. Interactive Software Technology, Handbook of Computer 
+Science and Engineering, CRC Press, 1996.
+
+[WG] P. Wegner, D. Goldin.  "Interaction, Computability, and Church's 
+Thesis", submitted for journal publication, June 1999.

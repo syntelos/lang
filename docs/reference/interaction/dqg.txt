@@ -1,0 +1,19 @@
+http://www.cs.umb.edu/~dqg/papers/its-8-01.ps Dina Goldin, Scott Smolka, Peter Wegner: Turing Machines, Transition Systems, and Interaction.  8th Int'l Workshop on Expressiveness in Concurrency, Aarlborg, Denmark, August 2001.
+
+http://www.cs.umb.edu/~dqg/papers/cec01.doc Dina Goldin, David Keil: Evolution, Interaction, and Intelligence.  CEC'01, Korea, May 2001.
+
+http://www.cs.umb.edu/~dqg/papers/uml.doc Dina Goldin, David Keil, Peter Wegner: An Interactive Viewpoint on the Role of UML.  Book chapter, published in Unified Modeling Language: Systems Analysis, Design, and Development Issues.  Idea Group Publishing, 2001.
+
+http://www.cs.umb.edu/~dqg/papers/er00.ps Dina Goldin, Srinath Srinivasa, Bernhard Thalheim: Information Systems = Databases + Interaction: Towards Principles of Information System Design.  ER2000, Salt Lake City, Oct. 2000.
+
+http://www.cs.umb.edu/~dqg/papers/foiks.ps Dina Goldin: Persistent Turing Machines as a Model of Interactive Computation.  FoIKS 2000, Burg, Germany, Feb 2000.
+
+http://www.cs.brown.edu/people/pw/papers/bcj1.pdf Peter Wegner, Dina Goldin: Interaction, Computability, and Church's Thesis.  Accepted to the British Computer Journal.
+
+http://www.cs.umb.edu/~dqg/papers/god.txt  Dina Goldin: On the Size and Computability of the World.  For the UMB CS dept. newsletter, July 1999.
+
+http://www.cs.brown.edu/people/pw/papers/cm.ps Peter Wegner, Dina Goldin: Interaction as a Framework for Modeling.  In Chen, et. al. (Eds.), Conceptual Modeling: Current Issues and Future Directions, LNCS #1565, April 1999.
+
+http://www.cs.brown.edu/people/pw/papers/coal.ps Peter Wegner, Dina Goldin: Coinductive Models of Finite Computing Agents.  Electronic Notes in Theoretical Computer Science, March 1999.
+
+http://www.cs.brown.edu/people/dqg/Papers/ptm.ps Dina Goldin, Peter Wegner: Persistence as a Form of Interaction.  Brown University Technical Report CS 98-07, March 1998.

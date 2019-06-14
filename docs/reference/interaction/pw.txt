@@ -1,0 +1,49 @@
+http://www.cs.brown.edu/people/pw/papers/oopsla95.pdf OOPSLA 95.  Tutorial Notes: Models and Paradigms of Interaction.  September 1995.
+
+http://www.cs.brown.edu/people/pw/papers/coord.ps Coordination as Constrained Interaction.  LNCS 1061, pp. 28-33, April 1996.
+
+http://www.cs.brown.edu/people/pw/papers/ficacm.ps Why Interaction Is More Powerful Than Algorithms, Communications of the ACM.  May 1997.
+
+http://www.cs.brown.edu/people/pw/papers/crcj1.ps Interactive Software Technology.  Handbook of Computer Science and Engineering, CRC Press.  December 1996.
+
+http://www.cs.brown.edu/people/pw/papers/fr1.ps Frameworks for Compound Active Documents.  Work in Progress.  May 1997.
+
+http://www.cs.brown.edu/people/pw/papers/finaltcs.ps Interactive Foundations of Computing, Final Draft</a>, Theoretical Computer Science, February 1998.  May 1997.
+
+http://www.cs.brown.edu/people/pw/papers/icalp.ps A Research Agenda for Interactive Computing.  Work in Progress.  January 1998.
+
+http://www.cs.brown.edu/people/pw/papers/monist.ps Towards Empirical Computer Science, The Monist, Spring 1999.  May 1998.
+
+http://www.cs.brown.edu/people/pw/papers/cs98-07.ps Persistence as a Form of Interaction. Brown Technical Report CS 98-07.  July 1998.
+
+http://www.cs.brown.edu/people/pw/papers/math1.ps Mathematical Models of Interactive Computing.  Brown Technical Report CS 99-13.  January 1999.
+
+http://www.cs.brown.edu/people/pw/papers/cm.ps Interaction as a Framework for Modeling.  LNCS #1565, April 1999.  January 1999.
+
+http://www.cs.brown.edu/people/pw/papers/coal.ps Coinductive Models of Finite Computing Agents.  Electronic Notes in Theoretical Computer Science, March 1999.  February 1999.
+
+http://www.cs.brown.edu/people/pw/papers/app1.pdf Interactive Visual Programming: Principles and Examples.  Work in Progress.  February 1999.
+
+http://www.brown.edu/Faculty/Faculty_Governance/facgov/facbulletin/March99Issue/wegner.html Modeling, Formalization, and Intuition.  Brown Faculty Bulletin.  March 1999.
+
+http://www.cs.brown.edu/people/pw/papers/ec99.pdf Models of Interaction.  ECOOP '99 Course Notes.  May 1999.
+
+http://www.cs.brown.edu/people/pw/papers/bcj1.pdf Interaction, Computability, and Church's Thesis.  Work in Progress.  June 1999.
+
+http://www.cs.brown.edu/people/pw/papers/ecoop99_speech.pdf Draft of ECOOP'99 Banquet Speech.  Lisbon, Portugal.  June 1999.
+
+http://www.cs.brown.edu/people/pw/papers/uml.ps An Interactive Viewpoint on the Role of UML.  Book chapter, published in Unified Modeling Language: Systems Analysis, Design, and Development Issues.  Idea Group Publishing, 2001.  August 2000.
+
+http://www.cse.uconn.edu/~dqg/papers/logic02.ps Paraconsistency of Interactive Computation PCL 2002 (Workshop on Paraconsistent Computational Logic), Denmark, July 2002.  May 2002.
+
+http://www.cse.uconn.edu/~dqg/papers/cacm02.rtf Computation Beyond Turing Machines.  Communications of the ACM, April 2003.  June 2002.
+
+http://www.cse.uconn.edu/~dqg/papers/turing04.pdf Turing's Ideas and Models of Computation.  Book chapter, in Alan Turing: Life and Legacy of a Great Thinker, ed. Christof Teuscher, Springer 2004 (co-authored with Eugene Eberbach, Dina Goldin).  June 2003.
+
+http://www.cse.uconn.edu/~dqg/papers/cie05.pdf The Church-Turing Thesis: Breaking the Myth.  Presented at CiE 2005, Amsterdam; LNCS 3526, Springer 2005, pp. 152-168.  June 2005.
+
+http://www.cse.uconn.edu/~dqg/papers/cacm06.txt Principles of Problem Solving.  Communications of the ACM, July 2006.  March 2006.
+
+http://www.cse.uconn.edu/~dqg/inter_book.html Interactive Computation: the New Paradigm.  Published by Springer-Verlag in September 2006 (co-edited with Dina Goldin, Scott Smolka).  September 2006.
+
+http://www.cs.brown.edu/people/pw/strong-cct.pdf Refuting the Strong Church-Turing Thesis: the Interactive Nature of Computing.  Accepted for publication in Minds and Machines.  Junary 2008.
