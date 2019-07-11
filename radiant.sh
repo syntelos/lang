@@ -33,9 +33,11 @@ Operations
 
 EOF
 }
-function head_lines {
+function message_count_meta {
     if [ -n "${1}" ]&&[ -f "${1}" ]
     then
+        # count metadata lines
+        #
         chk=1
         for lno in $(egrep -n '^[A-Z][-a-zA-Z0-9]+: ' ${1} | sed 's/:.*//')
         do
@@ -47,6 +49,8 @@ function head_lines {
             fi
         done
 
+        # affirm presence of metadata lines by count
+        #
         if [ 1 -lt $chk ]
         then
             echo $chk
@@ -54,6 +58,44 @@ function head_lines {
         fi
     fi
     return 1
+}
+function message_head_close {
+    if [ -n "${1}" ]&&[ -f "${1}" ]
+    then
+        # count metadata lines, as in "message_count_meta"
+        #
+        chk=1
+        for lno in $(egrep -n '^[A-Z][-a-zA-Z0-9]+: ' ${1} | sed 's/:.*//')
+        do
+            if [ $chk -eq $lno ]
+            then
+                chk=$(( $chk + 1 ))
+            else
+                break
+            fi
+        done
+
+        # cut everything after metadata
+        #
+        count=$(wc -l "${1}" | awk '{print $1}')
+
+        if cat "${1}" | sed "${chk},${count}d" > /tmp/tmp && mv /tmp/tmp "${1}"
+        then
+            return 0
+        fi
+    fi
+    return 1
+}
+function message_head_open {
+    if [ -n "${1}" ]&&[ -f "${1}" ]
+    then
+
+        echo >> "${1}"
+
+        return 0
+    else
+        return 1
+    fi
 }
 function file_lines {
     if [ -n "${1}" ]&&[ -f "${1}" ]
@@ -84,7 +126,7 @@ function file_hash {
     return 1
 }
 function copy_head {
-    if count=$(head_lines "${1}")
+    if count=$(message_count_meta "${1}")
     then
         cat "${1}" | head -n ${count}
         return 0
@@ -93,9 +135,13 @@ function copy_head {
     fi
 }
 function copy_body {
-    if length=$(file_lines "${1}") && count=$(head_lines "${1}")
+    if length=$(file_lines "${1}") && count=$(message_count_meta "${1}")
     then
-        cat "${1}" | tail -n $(( $length - $count ))
+        many=$(( $length - $count ))
+        if [ 0 -lt ${many} ]
+        then
+            cat "${1}" | tail -n ${many}
+        fi
         return 0
     else
         return 1
@@ -117,7 +163,7 @@ function do_touch {
     fi
 }
 function do_import {
-    if count=$(head_lines "${1}") && [ 0 -lt $count ]
+    if count=$(message_count_meta "${1}") && [ 0 -lt $count ]
     then
         return 1
 
@@ -148,16 +194,109 @@ function do_update {
     then
         if copy_body "${1}" > /tmp/body
         then
-            #merge
+            # update merge
+            #
+            #    for each expected metadata line, perform rewrite or append
+            #
             if date=$(date -r "${1}") && size=$(file_size /tmp/body) && hash=$(file_hash /tmp/body)
             then
 
-                if cat /tmp/head | sed "s%^Last-Modified: .*%Last-Modified: ${date}%; s%^Content-Length: .*%Content-Length: ${size}%; s%^Content-MD5: .*%Content-MD5: ${hash}%;" > "${1}" && cat /tmp/body >> "${1}"
-                then
-                    touch -d "${date}" "${1}"
+                for meta in Location Content-Type Content-Length Content-MD5 Date Last-Modified
+                do
 
-                    return 0
-                fi
+                    if [ -z "$(egrep -e ^${meta}: /tmp/head)" ]
+                    then
+
+                        case ${meta} in
+                            Location)
+                                if message_head_close /tmp/head && echo "Location: file:${1}" >> /tmp/head
+                                then
+                                    message_head_open /tmp/head
+                                else
+                                    return 1
+                                fi
+                                ;;
+                            Content-Type)
+                                if message_head_close /tmp/head && echo "Content-Type: text/plain; charset=UTF-8" >> /tmp/head
+                                then
+                                    message_head_open /tmp/head
+                                else
+                                    return 1
+                                fi
+                                ;;
+                            Content-Length)
+                                if message_head_close /tmp/head && echo "Content-Length: ${size}" >> /tmp/head
+                                then
+                                    message_head_open /tmp/head
+                                else
+                                    return 1
+                                fi
+                                ;;
+                            Content-MD5)
+                                if message_head_close /tmp/head && echo "Content-MD5: ${hash}" >> /tmp/head
+                                then
+                                    message_head_open /tmp/head
+                                else
+                                    return 1
+                                fi
+                                ;;
+                            Date)
+                                if message_head_close /tmp/head && echo "Date: ${date}" >> /tmp/head
+                                then
+                                    message_head_open /tmp/head
+                                else
+                                    return 1
+                                fi
+                                ;;
+                            Last-Modified)
+                                if message_head_close /tmp/head && echo "Last-Modified: ${date}" >> /tmp/head
+                                then
+                                    message_head_open /tmp/head
+                                else
+                                    return 1
+                                fi
+                                ;;
+                        esac
+                    else
+
+                        case ${meta} in
+                            Location)
+                            ;;
+                            Content-Type)
+                            ;;
+                            Content-Length)
+                                if cat /tmp/head | sed "s%^Content-Length: .*%Content-Length: ${size}%" > /tmp/tmp
+                                then
+                                    mv /tmp/tmp /tmp/head
+                                else
+                                    return 1;
+                                fi
+                                ;;
+                            Content-MD5)
+                                if cat /tmp/head | sed "s%^Content-MD5: .*%Content-MD5: ${hash}%" > /tmp/tmp
+                                then
+                                    mv /tmp/tmp /tmp/head
+                                else
+                                    return 1
+                                fi
+                                ;;
+                            Date)
+                                ;;
+                            Last-Modified)
+                                if cat /tmp/head | sed "s%^Last-Modified: .*%Last-Modified: ${date}%" > /tmp/tmp
+                                then
+                                    mv /tmp/tmp /tmp/head
+                                else
+                                    return 1
+                                fi
+                                ;;
+                        esac
+                    fi
+                done
+
+                cat /tmp/head /tmp/body > "${1}"
+                touch -d "${date}" "${1}"
+                return 0
             fi
         fi
     fi
@@ -191,7 +330,7 @@ then
 
     case "${opr}" in
         count)
-            if head_lines "${src}"
+            if message_count_meta "${src}"
             then
                 exit 0
             else
