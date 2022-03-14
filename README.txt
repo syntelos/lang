@@ -31,7 +31,13 @@
   type-object couple is the structural feature that is
   elemental to lists and lists of lists, including maps.
 
-See also
+Location
+
+  https://twitter.com/syntelos/status/1501806983078457351
+  https://github.com/syntelos/tex-reports/blob/master/2022/syntelos-type_object_theory-20220307-0.txt
+  https://drive.google.com/file/d/1hynapuBhBxX5P6mIODXtogzOmPoc-1EY/view
+
+Related work
 
   https://github.com/syntelos/c-endian-bint
   https://github.com/syntelos/c-lang-bix
