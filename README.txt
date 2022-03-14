@@ -30,3 +30,9 @@
   object into an atomic couple, an ubiquitous molecule.  The
   type-object couple is the structural feature that is
   elemental to lists and lists of lists, including maps.
+
+See also
+
+  https://github.com/syntelos/c-endian-bint
+  https://github.com/syntelos/c-lang-bix
+  https://github.com/syntelos/c-lang-con7
