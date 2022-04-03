@@ -41,4 +41,4 @@ Related work
 
   https://github.com/syntelos/c-endian-bint
   https://github.com/syntelos/c-lang-bix
-  https://github.com/syntelos/c-lang-con7
+  https://github.com/syntelos/c-lang-leb
