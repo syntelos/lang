@@ -42,5 +42,4 @@ Related work
   https://github.com/syntelos/c-endian-bint
   https://github.com/syntelos/c-lang-bix
   https://github.com/syntelos/c-lang-leb
-  https://github.com/syntelos/c-lang-ref
   https://github.com/syntelos/c-lang-span
